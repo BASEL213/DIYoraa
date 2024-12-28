@@ -41,7 +41,7 @@ DIYora is a platform that celebrates originality and craftsmanship by allowing c
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/shady0x00/DIYora.git
+   git clone https://github.com/BASEL213/DIYora.git
 Navigate to the project directory:
   cd DIYora
 Create a virtual environment:
