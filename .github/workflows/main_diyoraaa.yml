@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      # Step 3: Create and activate a virtual environment
+      # Step 3: Create and start virtual environment
       - name: Create and start virtual environment
         shell: powershell
         run: |
@@ -37,7 +37,7 @@ jobs:
         shell: powershell
         run: Compress-Archive -Path * -DestinationPath release.zip -Force
 
-      # Step 6: Upload artifact for deployment
+      # Step 6: Upload artifact for deployment jobs
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
@@ -47,7 +47,7 @@ jobs:
             !venv/
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     environment:
       name: 'Production'
@@ -62,9 +62,10 @@ jobs:
         with:
           name: python-app
 
-      # Step 2: Unzip artifact for deployment
+      # Step 2: Unzip artifact using PowerShell
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        shell: powershell
+        run: Expand-Archive -Path release.zip -DestinationPath . -Force
 
       # Step 3: Login to Azure
       - name: Login to Azure
