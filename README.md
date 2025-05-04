@@ -1,4 +1,4 @@
-# DIYora - DIY Marketplace Hub
+ # DIYora - DIY Marketplace Hub
 
 DIYora is an e-commerce platform for creators to showcase and sell handcrafted projects. The platform connects makers and buyers, fostering a community for DIY enthusiasts.
 
